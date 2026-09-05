@@ -85,3 +85,21 @@ Duas formas, ambas válidas — use `!` para o caso simples e o rodapé quando p
 
 Opcional. Use quando restringir a mudança a uma parte já nomeada do repo (`feat(adr):`).
 Não invente escopo para commit que toca o projeto inteiro.
+
+## Release
+
+Este projeto usa [SemVer](https://semver.org/), com uma única linha de versão para o projeto
+inteiro. O porquê está no [ADR 0004](docs/ADR/0004-usar-semver-para-versionar-o-devflow-ai.md).
+
+Não há automação ainda — release é manual, sob demanda:
+
+1. Veja os commits desde a última tag: `git log <última-tag>..HEAD --oneline` (ou o histórico
+   inteiro, se ainda não existe nenhuma tag).
+2. Determine o bump pelo tipo mais alto presente entre esses commits:
+   - `BREAKING CHANGE`/`!` → MINOR enquanto o MAJOR estiver travado em `0`, MAJOR a partir de `1.0.0`
+   - `feat` → MINOR
+   - só `fix`/outros tipos → PATCH
+3. Adicione uma seção ao `CHANGELOG.md` com a versão, a data e os commits agrupados por tipo.
+4. Commite o `CHANGELOG.md`: `chore: release vX.Y.Z`.
+5. Crie a tag anotada sobre esse commit e publique: `git tag -a vX.Y.Z -m "vX.Y.Z"` seguido de
+   `git push --tags`.

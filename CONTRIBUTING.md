@@ -1,5 +1,17 @@
 # Contribuindo
 
+## Branches
+
+Este projeto usa [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow).
+O porquê está no [ADR 0003](docs/ADR/0003-usar-github-flow-como-estrategia-de-branch.md).
+
+- `main` é a única branch de longa duração e sempre reflete o estado atual.
+- Todo trabalho nasce em uma branch curta nomeada `<tipo>/<descricao-curta>`, usando os mesmos seis
+  tipos do Conventional Commits (ex.: `feat/branch-strategy-adr`, `fix/audit-layer-check`).
+- Entra na `main` por Pull Request revisado — nunca commit direto na `main`.
+- A branch é apagada após o merge.
+- Release é uma tag `vX.Y.Z` sobre um commit da `main`; não há branch de release nem de hotfix.
+
 ## Commits
 
 Este projeto usa [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/).

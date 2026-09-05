@@ -14,3 +14,4 @@
 | # | decisão | status | data |
 |---|---|---|---|
 | [0003](0003-usar-github-flow-como-estrategia-de-branch.md) | Usar GitHub Flow como estratégia de branch | accepted | 2026-09-05 |
+| [0004](0004-usar-semver-para-versionar-o-devflow-ai.md) | Usar SemVer para versionar o DevFlow-AI | accepted | 2026-09-05 |

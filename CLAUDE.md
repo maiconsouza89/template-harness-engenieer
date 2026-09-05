@@ -4,9 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Estado atual
 
-Repositório **vazio**: `git init` feito na branch `main`, nenhum commit, nenhum código, nenhuma stack escolhida.
-Não existe arquitetura para descrever ainda — as seções "Comandos" e "Arquitetura" abaixo são placeholders e
-devem ser preenchidas por quem implementar cada decisão, no mesmo commit que introduzir a ferramenta.
+Ainda **sem código nem stack escolhida** — só convenções de processo fechadas até aqui (ADRs 0001–0004: uso de
+ADR, Conventional Commits, GitHub Flow, SemVer). Não existe arquitetura para descrever ainda — as seções
+"Comandos" e "Arquitetura" abaixo são placeholders e devem ser preenchidas por quem implementar cada decisão,
+no mesmo commit que introduzir a ferramenta.
 
 ## O que é o DevFlow-AI
 
@@ -48,11 +49,12 @@ documentação e qualquer texto em `docs/`.
 **Inglês** em tudo que é código: nomes de variáveis, funções, classes, arquivos e diretórios, comentários inline,
 mensagens de erro/log da aplicação, mensagens de commit e descrições de PR.
 
-### 4. Commits
+### 4. Commits, branch e release
 
 [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/), com o conjunto de seis tipos
 (`feat`, `fix`, `docs`, `refactor`, `test`, `chore`) e os exemplos de certo e errado em `CONTRIBUTING.md`.
-O porquê da escolha está no ADR 0002.
+O porquê da escolha está no ADR 0002. `CONTRIBUTING.md` também é a referência operacional para a estratégia de
+branch (GitHub Flow, ADR 0003) e para o runbook de release manual (SemVer, ADR 0004).
 
 ## Comandos
 

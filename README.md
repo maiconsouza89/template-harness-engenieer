@@ -12,9 +12,9 @@ decisão e do controle de versão. O que existe hoje:
 
 - **Registro de decisões** — todo ADR aceito vive em [`docs/ADR/`](docs/ADR/index.md), com a
   camada da stack a que pertence declarada no front-matter.
-- **Controle de versão** — mensagens de commit seguem
-  [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/); ver
-  [`CONTRIBUTING.md`](CONTRIBUTING.md) e [ADR 0002](docs/ADR/0002-usar-conventional-commits.md).
+- **Controle de versão** — mensagens de commit seguem Conventional Commits, restrito a seis
+  tipos; ver [`CONTRIBUTING.md`](CONTRIBUTING.md) e
+  [ADR 0002](docs/ADR/0002-usar-conventional-commits.md).
 
 Quais outras camadas vão existir (codificação assistida, revisão, testes, etc.) ainda é decisão em
 aberto — ver [`CLAUDE.md`](CLAUDE.md).

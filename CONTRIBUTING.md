@@ -2,8 +2,9 @@
 
 ## Branches
 
-Este projeto usa [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow).
-O porquê está no [ADR 0003](docs/ADR/0003-usar-github-flow-como-estrategia-de-branch.md).
+Este projeto usa GitHub Flow, com a convenção de nome de branch definida abaixo — a doc do GitHub
+não prescreve nome de branch, esse recorte é nosso. A decisão e o porquê estão no
+[ADR 0003](docs/ADR/0003-usar-github-flow-como-estrategia-de-branch.md).
 
 - `main` é a única branch de longa duração e sempre reflete o estado atual.
 - Todo trabalho nasce em uma branch curta nomeada `<tipo>/<descricao-curta>`, usando os mesmos seis
@@ -14,8 +15,9 @@ O porquê está no [ADR 0003](docs/ADR/0003-usar-github-flow-como-estrategia-de-
 
 ## Commits
 
-Este projeto usa [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/).
-O porquê está no [ADR 0002](docs/ADR/0002-usar-conventional-commits.md).
+Este projeto usa Conventional Commits 1.0.0, restrito aos seis tipos abaixo — a spec mandata só
+`feat` e `fix` e permite outros; o recorte é nosso. A decisão e o porquê estão no
+[ADR 0002](docs/ADR/0002-usar-conventional-commits.md).
 
 ### Formato
 
@@ -88,14 +90,16 @@ Não invente escopo para commit que toca o projeto inteiro.
 
 ## Release
 
-Este projeto usa [SemVer](https://semver.org/), com uma única linha de versão para o projeto
-inteiro. O porquê está no [ADR 0004](docs/ADR/0004-usar-semver-para-versionar-o-devflow-ai.md).
+Este projeto usa SemVer, com uma única linha de versão para o projeto inteiro. A decisão e o
+porquê estão no [ADR 0004](docs/ADR/0004-usar-semver-para-versionar-o-devflow-ai.md).
 
 Não há automação ainda — release é manual, sob demanda:
 
-1. Veja os commits desde a última tag: `git log <última-tag>..HEAD --oneline` (ou o histórico
-   inteiro, se ainda não existe nenhuma tag).
-2. Determine o bump pelo tipo mais alto presente entre esses commits:
+1. Veja os commits desde a última tag: `git log <última-tag>..HEAD --oneline --no-merges` (ou o
+   histórico inteiro, se ainda não existe nenhuma tag). `--no-merges` porque o merge commit de PR
+   não tem prefixo de tipo — quem carrega o tipo são os commits de dentro do PR.
+2. Determine a versão. Se ainda não existe tag, a primeira release é `0.1.0` (ADR 0004), qualquer
+   que seja o tipo mais alto no histórico. Daí em diante, o bump vem do tipo mais alto presente:
    - `BREAKING CHANGE`/`!` → MINOR enquanto o MAJOR estiver travado em `0`, MAJOR a partir de `1.0.0`
    - `feat` → MINOR
    - só `fix`/outros tipos → PATCH

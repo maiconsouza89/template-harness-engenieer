@@ -51,10 +51,10 @@ mensagens de erro/log da aplicação, mensagens de commit e descrições de PR.
 
 ### 4. Commits, branch e release
 
-[Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/), com o conjunto de seis tipos
-(`feat`, `fix`, `docs`, `refactor`, `test`, `chore`) e os exemplos de certo e errado em `CONTRIBUTING.md`.
-O porquê da escolha está no ADR 0002. `CONTRIBUTING.md` também é a referência operacional para a estratégia de
-branch (GitHub Flow, ADR 0003) e para o runbook de release manual (SemVer, ADR 0004).
+Conventional Commits 1.0.0, com o conjunto de seis tipos (`feat`, `fix`, `docs`, `refactor`, `test`, `chore`) e os
+exemplos de certo e errado em `CONTRIBUTING.md`. O porquê da escolha está no ADR 0002. `CONTRIBUTING.md` também é a
+referência operacional para a estratégia de branch (GitHub Flow, ADR 0003) e para o runbook de release manual
+(SemVer, ADR 0004).
 
 ## Comandos
 
